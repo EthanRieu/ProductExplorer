@@ -74,6 +74,22 @@ fun sampleProduct(): ProductUi {
     )
 }
 
+fun sampleProductOutOfStock(): ProductUi {
+    return ProductUi(
+        title = "Casque Audio Pulse",
+        brand = "SoundPeak",
+        category = "Audio",
+        description = "Un casque confortable conçu pour écouter de la musique, " +
+                "suivre des cours en ligne et travailler dans de bonnes conditions.",
+        price = 129.99,
+        discountPercentage = 8.0,
+        rating = 4.2,
+        stock = 0,
+        warrantyInformation = "Garantie constructeur : 1 an",
+        shippingInformation = "Produit temporairement indisponible"
+    )
+}
+
 @Composable
 fun ProductDetailScreen(
     product: ProductUi,
@@ -293,6 +309,17 @@ fun ProductDetailScreenPreview() {
     TPsTheme {
         ProductDetailScreen(
             product = sampleProduct(),
+            onAddToCartClick = {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProductDetailScreenOutOfStockPreview() {
+    TPsTheme {
+        ProductDetailScreen(
+            product = sampleProductOutOfStock(),
             onAddToCartClick = {}
         )
     }
