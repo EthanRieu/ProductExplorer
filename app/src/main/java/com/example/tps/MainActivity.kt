@@ -531,3 +531,14 @@ fun DailyOfferBox(
         }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun ProductHomeScreenPreview() {
+    TPsTheme {
+        ProductHomeScreen(
+            featuredProduct = sampleProduct(),
+            onFeaturedProductClick = {},
+        )
+    }
+}
